@@ -17,7 +17,7 @@ const App = () => {
             element={<Plans />}
           />
           <Route
-            path="/checkout"
+            path="plans/checkout"
             element={<StripeCheckout  />}
           />
           <Route

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import {
+import "./CheckoutForm.css"
+  import {
   PaymentElement,
   useStripe,
   useElements,

@@ -26,7 +26,6 @@ app.get("/", (req, res) => {
 });
 app.post("/create-payment-intent", async (req, res) => {
   const { amount } = req.body;
-  console.log(amount);
   const amountInUSD = amount; // Example: Charging $0.25
 
   // Convert amount to cents

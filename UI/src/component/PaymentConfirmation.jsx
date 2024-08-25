@@ -1,47 +1,47 @@
 import "./PaymentConfirmation.css";
 
+import { useLocation } from "react-router-dom";
 const PaymentConfirmation = () => {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+
+  // Get specific parameter
+  const myParam = searchParams.get("payment_intent");
   return (
-    <div>
-      <div className="bg">
-        <div className="card">
-          <span className="card__success">
-            <i className="ion-checkmark"></i>
-          </span>
-
-          <h1 className="card__msg">Payment Complete</h1>
-          <h2 className="card__submsg">Thank you for your transfer</h2>
-
-          <div className="card__body">
-            <img
-              src="http://nathgreen.co.uk/assets/img/nath.jpg"
-              className="card__avatar"
-            />
-            <div className="card__recipient-info">
-              <p className="card__recipient">Nath Green</p>
-              <p className="card__email">hello@nathgreen.co.uk</p>
-            </div>
-
-            <h1 className="card__price">
-              <span>£</span>20<span>.00</span>
-            </h1>
-
-            <p className="card__method">Payment method</p>
-            <div className="card__payment">
-              <img
-                src="https://seeklogo.com/images/V/VISA-logo-F3440F512B-seeklogo.com.png"
-                className="card__credit-card"
-              />
-              <div className="card__card-details">
-                <p className="card__card-type">Credit / debit card</p>
-                <p className="card__card-number">Visa ending in **89</p>
-              </div>
-            </div>
+    <div className="bg-gray-100 h-screen flex justify-center items-center">
+      <div className="bg-white p-6  md:mx-auto">
+        <svg
+          viewBox="0 0 24 24"
+          className="text-green-600 w-16 h-16 mx-auto my-6"
+        >
+          <path
+            fill="currentColor"
+            d="M12,0A12,12,0,1,0,24,12,12.014,12.014,0,0,0,12,0Zm6.927,8.2-6.845,9.289a1.011,1.011,0,0,1-1.43.188L5.764,13.769a1,1,0,1,1,1.25-1.562l4.076,3.261,6.227-8.451A1,1,0,1,1,18.927,8.2Z"
+          ></path>
+        </svg>
+        <div className="text-center">
+          <h3 className="md:text-2xl text-base text-gray-900 font-semibold text-center">
+            Payment Done!
+          </h3>
+          <p className="text-gray-600 my-2">
+            Thank you for completing your secure online payment.
+          </p>
+          <hr className="h-px my-8 bg-green-200 border-0 dark:bg-green-600 mx-10" />
+          <div className="py-5">
+            <h4 className="md:text-2xl text-base text-gray-900 font-semibold text-center">
+              Payment Intent ID :
+            </h4>
+            <p className="text-gray-600 my-2">{myParam}</p>
           </div>
 
-          <div className="card__tags">
-            <span className="card__tag">completed</span>
-            <span className="card__tag">#123456789</span>
+          <p> Have a great day! </p>
+          <div className="py-10 text-center">
+            <a
+              href="#"
+              className="px-12 bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3"
+            >
+              GO BACK
+            </a>
           </div>
         </div>
       </div>

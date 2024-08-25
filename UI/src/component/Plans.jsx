@@ -152,7 +152,7 @@ const Plans = () => {
             </li>
           </ul>
           <button
-            onClick={() => navigation("../checkout?amount=50")}
+            onClick={() => navigation("checkout?amount=50")}
             className="button"
           >
             Get Started
